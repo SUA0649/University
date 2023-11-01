@@ -9,7 +9,7 @@ void inputArray(int a[],int size);
 void main(){
     int a,b,c;
     inputNums(&a,&b,&c);
-    int d = confuse1(a,b,c);
+    int d = confuse1(a,&b,&c);
     printf("\nThe result is %d",d);
     printf("\n %d %d %d\n",a,b,c);
     getch();
