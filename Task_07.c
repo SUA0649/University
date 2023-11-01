@@ -17,11 +17,11 @@ void main(){
 
 int confuse1(int b,int *a,int *c){
     int array1[6]={1,2,3};
-    int abc = confuse2(a,array1,c,b,3);
+    int abc = confuse2(&a,array1,b,&c,3);
     *c =(*c)*(10);
     b = (*a)+(*c);
     for(int i=0;i<6;i++)
-    printf("%d",array1[i]);
+    printf("%d ",array1[i]);
     printf("\n leaving confuse1\n");
     return abc;
     
