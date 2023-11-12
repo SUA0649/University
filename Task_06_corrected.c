@@ -7,7 +7,7 @@ int main(){
 	scanf(" %s",s);
 	char *ptr=s;
 	while(*ptr!='\0'){
-		if(*ptr=='a'||*ptr=='e'||*ptr=='o'||*ptr=='i'||*ptr=='u'){
+		if(*ptr=='a'||*ptr=='e'||*ptr=='o'||*ptr=='i'||*ptr=='u'||*ptr=='A'||*ptr=='E'||*ptr=='O'||*ptr=='I'||*ptr=='U'){
 			++count_vowels;
 			*ptr++;
 		}
