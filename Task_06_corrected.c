@@ -1,3 +1,4 @@
+//23K-0649
 #include<stdio.h>
 int main(){
 	char s[500];
