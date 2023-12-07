@@ -7,7 +7,7 @@
     int Salary;
 }Details;
 int main(){
-    printf("ID: 23K-0649\t Name:Shaheer Uddin Ahmed\t Secion:E")
+    printf("ID: 23K-0649\t Name:Shaheer Uddin Ahmed\t Secion:E");
     FILE *f1,*f2,*f3;
     Details d[3];
     f1 = fopen("Personal.txt","r");
@@ -19,12 +19,12 @@ int main(){
     else{
         int i=0,temp,t_salary;
       	 while(!feof(f1)){
-            fscanf(f1,"%d\t%s",d[i].ID,d[i].Name);  
+            fscanf(f1,"%d	%s",&d[i].ID,&d[i].Name);  
             i++;
         }
         
         while(!feof(f2)){
-            fscanf(f2,"%d	%d",temp,t_salary);
+            fscanf(f2,"%d	%d",&temp,&t_salary);
             for(int j=0;j<3;j++){
                 if(temp==d[j].ID){
                     d[j].Salary=t_salary;
@@ -33,7 +33,7 @@ int main(){
         }
         fprintf(f3,"ID\tName\tSalary\n");
         for(int i=0;i<3;i++){
-            fprintf(f3,"%d\t%s\t%d",d[i].ID,d[i].Name,d[i].Salary);
+            fprintf(f3,"%d\t%s\t%d\n",d[i].ID,d[i].Name,d[i].Salary);
         }
     }
 
