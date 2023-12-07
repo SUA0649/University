@@ -22,8 +22,8 @@ int main(){
         char freq_role[5][100];
         for(int j=0;j<5;j++){
         char* temp_name = names[rand()%20];
-        char * temp_num = role[rand()%5];
-        int n=0;
+        char* temp_num = role[rand()%5];
+        int n=0; int p=0;
         for(int k=0;k<20;k++){
         if(strcmp(freq_name[k], temp_name) == 0){
             n=0;
@@ -48,9 +48,9 @@ int main(){
 		if(count2==0){
             j--;
         }
-        else if(count2==1){
-        	strncpy(freq_role[count2],temp_num,30);
-        	++count2;
+        else {
+        	strncpy(freq_role[p],temp_num,30);
+        	++p;
             strcpy(R[i][j].role,temp_num);
         }
         R[i][j].Communication = rand() % 100;
@@ -58,10 +58,22 @@ int main(){
         R[i][j].Creativity = rand() % 100;
         }
     }
+    int sum[4]={0};
     for(int i=0;i<4;i++){
         for(int j=0;j<5;j++){
             printf("%s\t%s\t%s\t%d %d %d\n",Depatments[i],R[i][j].name,R[i][j].role,R[i][j].Communication,R[i][j].Creativity,R[i][j].Teamwork);
+            sum[i]+=(R[i][j].Communication+R[i][j].Creativity+R[i][j].Teamwork);
         }
+    }
+    int max=sum[0];
+    for(int i=0;i<4;i++){
+        if(max<=sum[i]){
+            max = i;
+        }
+    }
+    printf("\n\nBest Department: \nDepatment\tName\tRole\tCommunication\tCreativity\tTeamwork\n");
+    for(int i=0;i<5;i++){
+        printf("%s\t%s\t%s\t%d\t%d\t%d\n",Depatments[max],R[max][i].name,R[max][i].role,R[max][i].Communication,R[max][i].Creativity,R[max][i].Teamwork);
     }
     return 0;
 }
